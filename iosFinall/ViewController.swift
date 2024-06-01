@@ -16,6 +16,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginclick: UIButton!
     
     @IBAction func loginclick(_ sender: UIButton) {
+        let userName = username.text
+        let password = password.text
+        if userName == "D1173552" && password == "630chienpeng" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+            HomeVC.modalPresentationStyle = .fullScreen
+            self.present(HomeVC,animated: true)
+        }
+        else{
+            let alertVC = UIAlertController(title: "錯誤", message: "帳號密碼輸入有誤，請再試一次！", preferredStyle: UIAlertController.Style.alert)
+            let okButtn = UIAlertAction(title: "確定", style: UIAlertAction.Style.default,handler: nil)
+            alertVC.addAction(okButtn)
+            self.present(alertVC,animated: true,completion: nil)
+        }
         
     }
     override func viewDidLoad() {

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func loginclick(_ sender: UIButton) {
         let userName = username.text
         let password = password.text
-        if userName == "D1173552" && password == "630chienpeng" {
+        if userName == "" && password == "" {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
             HomeVC.modalPresentationStyle = .fullScreen
